@@ -6,7 +6,7 @@ import { useState } from 'react'
 import './style.scss'
 
 
-const Step2 = ({titles}) => {
+const Step2 = ({titles, monthly, onChangeFrequency}) => {
 
   const options = {
     "arcade": {
@@ -38,11 +38,7 @@ const Step2 = ({titles}) => {
   const [advancedSelected, setAdvancedSelected] = useState(false);
   const [proSelected, setProSelected] = useState(false);
 
-  const [monthly, setmonthly] = useState(true);
   
-  const handleFrequency = (e) => {
-    setmonthly(!monthly);
-  }
 
   const handleOptionSelected = (e) => {
     const option = e.currentTarget;
@@ -97,7 +93,7 @@ const Step2 = ({titles}) => {
       </div>
       <Frequency 
         monthly={monthly}
-        onChange={handleFrequency}
+        onChange={onChangeFrequency}
       />
     </div>
   )

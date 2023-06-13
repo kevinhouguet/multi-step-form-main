@@ -1,0 +1,32 @@
+.option {
+  cursor: pointer;
+  font-size: 0.8rem;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  outline: var(--color-neutral-light-gray) thin solid;
+
+  border-radius: 6px;
+
+  margin-bottom: 1rem;
+  padding: 1rem 0.5rem;
+
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0.5rem;
+  }
+  
+  .option__group {
+    margin: 0 0.5rem;
+
+  }
+  .option__price {
+    color: var(--color-primary-purplish-blue);
+  }
+}
+
+.option--checked {
+  outline: var(--color-primary-marine-blue) thin solid;
+}

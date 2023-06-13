@@ -2,8 +2,16 @@ import './style.scss'
 
 import Step1 from './Step1'
 import Step2 from './Step2'
+import { useState } from 'react';
+import Step3 from './Step3';
 
 const Content = () => {
+
+  const [monthly, setmonthly] = useState(true);
+  
+  const handleFrequency = (e) => {
+    setmonthly(!monthly);
+  }
 
   const titles = {
     "step1": {
@@ -27,7 +35,10 @@ const Content = () => {
   return (
     <main className="content">
       {/* <Step1 titles = {titles.step1}/> */}
-      <Step2 titles = {titles.step2}/>
+      {/* <Step2  titles = {titles.step2} 
+              monthly={monthly} 
+              onChangeFrequency={handleFrequency}/> */}
+      <Step3 titles = {titles.step3} monthly={monthly}/>
     </main>
   )
 }
