@@ -1,0 +1,63 @@
+.content {
+  padding: 2rem 1.5rem;
+  margin: 1rem;
+  border-radius: 0.7rem;
+  background-color: var(--color-neutral-white);
+
+  position: absolute;
+  top: 12%;
+
+  box-shadow: 0 5px 1rem rgba(105, 105, 105, 0.2);
+
+  .step {
+
+    &__title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--color-primary-marine-blue);
+    }
+
+    &__description {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: var(--color-neutral-cool-gray);
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      &__group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        label {
+          font-size: 0.8rem;
+          font-weight: 700;
+          color: var(--color-primary-marine-blue);
+        }
+
+        input {
+          padding: 0.7rem 1rem;
+          border-radius: 0.3rem;
+          border: 1px solid var(--color-neutral-light-gray);
+          font-size: 1rem;
+          font-weight: 700;
+          color: var(--color-primary-marine-blue);
+        }
+
+        input::placeholder {
+          color: var(--color-neutral-cool-gray);
+        }
+      }
+    }
+
+    
+
+    
+  }
+}
