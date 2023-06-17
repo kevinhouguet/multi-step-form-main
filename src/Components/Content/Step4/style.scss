@@ -34,7 +34,12 @@
       padding: 0.5rem 0;
       display: flex;
       justify-content: space-between;
+
+      &__title {
+        color: var(--color-neutral-cool-gray);
+      }
     }
+
   }
 
   &__footer {
@@ -57,6 +62,7 @@
 
     &__title {
       font-weight: 500;
+      color: var(--color-neutral-cool-gray);
     }
   }
 }

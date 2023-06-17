@@ -34,7 +34,15 @@ const Content = () => {
   }
 
   const [step1, setStep1] = useState({});
-  const [step2, setStep2] = useState({});
+  const [step2, setStep2] = useState({
+    plan: {
+      "title": "Arcade",
+      "price": {
+        "monthly": 9,
+        "yearly": 90
+      }
+    }
+  });
   const [step3, setStep3] = useState({});
 
   return (
@@ -53,7 +61,6 @@ const Content = () => {
       <Step4 
         titles = {titles.step4} 
         monthly={monthly}
-        step1={step1}
         step2={step2}
         step3={step3}
       />
