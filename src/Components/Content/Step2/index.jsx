@@ -6,7 +6,7 @@ import { useState } from 'react'
 import './style.scss'
 
 
-const Step2 = ({titles, monthly, onChangeFrequency}) => {
+const Step2 = ({titles, monthly, onChangeFrequency, setStep}) => {
 
   const options = {
     "arcade": {
@@ -47,14 +47,17 @@ const Step2 = ({titles, monthly, onChangeFrequency}) => {
       setArcadeSelected(true);
       setAdvancedSelected(false);
       setProSelected(false);
+      setStep({plan: options.arcade})
     } else if (optionTitle === 'Advanced') {
       setArcadeSelected(false);
       setAdvancedSelected(true);
       setProSelected(false);
+      setStep({plan: options.advanced})
     } else {
       setArcadeSelected(false);
       setAdvancedSelected(false);
       setProSelected(true);
+      setStep({plan: options.pro})
     }
   }
   

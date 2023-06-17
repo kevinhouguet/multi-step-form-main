@@ -49,3 +49,13 @@
     background: var(--color-primary-light-blue);
   }
 ```
+
+### Interaction to set new object element
+```javascript
+const handleChangeName = (e) => {
+    setStep(prev => ({
+      ...prev,
+      name: e.target.value
+    }))
+  }
+```

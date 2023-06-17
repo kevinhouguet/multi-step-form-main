@@ -1,6 +1,6 @@
 import './style.scss'
 
-const Step3 = ({titles, monthly}) => {
+const Step3 = ({titles, monthly, setStep}) => {
 
   const options = {
     "onlineService": {
@@ -32,8 +32,19 @@ const Step3 = ({titles, monthly}) => {
   const handleCheckboxChange = (e) => {
     if(e.target.checked) {
       e.target.parentElement.classList.add('option--checked')
+      setStep(prev => (
+        {...prev,
+          addons: {...prev.addons, [e.target.name]: options[e.target.name]}              
+        }
+      ))
     } else {
       e.target.parentElement.classList.remove('option--checked')
+      // #TODO: remove the plan from the state
+      setStep(prev => (
+        {...prev,
+          addons: {...prev.addons, [e.target.name]: null}
+        }
+      ))
     }
   }
 
