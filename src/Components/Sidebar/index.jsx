@@ -1,13 +1,15 @@
 import './style.scss'
 
-const Sidebar = () => {
+const Sidebar = ({stepLvl, onClick}) => {
+
+  const stepNb = 4;
+
   return (
     <div className="sidebar">
         <ul className='step-list'>
-          <li className="step">1</li>
-          <li className="step">2</li>
-          <li className="step">3</li>
-          <li className="step step-active">4</li>
+          {Array.from(Array(stepNb).keys()).map(step => (
+            <li className={`step ${stepLvl == step + 1 ? 'step-active' : ''}`} key={step} onClick={onClick}>{step + 1}</li>
+          ))}
         </ul>
       </div>
   )

@@ -6,7 +6,7 @@ import { useState } from 'react';
 import Step3 from './Step3';
 import Step4 from './Step4';
 
-const Content = () => {
+const Content = ({stepLvl}) => {
 
   const [monthly, setmonthly] = useState(true);
   
@@ -46,28 +46,35 @@ const Content = () => {
   const [step3, setStep3] = useState({});
 
   return (
-    <main className="content">
-      <Step1 
-        titles = {titles.step1}
-        setStep={setStep1}/>
-      <Step2  titles = {titles.step2} 
-              monthly={monthly} 
-              onChangeFrequency={handleFrequency}
-              setStep={setStep2}/>
-      <Step3 
-        titles = {titles.step3} 
-        monthly={monthly}
-        setStep={setStep3}/>
-      <Step4 
-        titles = {titles.step4} 
-        monthly={monthly}
-        step2={step2}
-        step3={step3}
-      />
+    <main className="content">      
+      <SwitchRender 
+      stepLvl={stepLvl} 
+      monthly={monthly} 
+      handleFrequency={handleFrequency} 
+      titles={titles} 
+      setStep1={setStep1}
+      setStep2={setStep2}
+      setStep3={setStep3}
+      step2={step2}
+      step3={step3}/>
     </main>
   )
 }
 
+const SwitchRender = ({stepLvl, monthly, handleFrequency, titles, setStep1, setStep3, setStep2, step2, step3}) => {
+  switch (stepLvl) {
+    case '1':
+      return <Step1 titles = {titles.step1} setStep={setStep1} />
+    case '2':
+      return <Step2 titles = {titles.step2} onChangeFrequency={handleFrequency} setStep={setStep2}/>
+    case '3':
+      return <Step3 titles = {titles.step3} monthly={monthly} setStep={setStep3}/>
+    case '4':
+      return <Step4 titles = {titles.step4} monthly={monthly} step2={step2} step3={step3}/>
+    default:
+      return <p>Something Gone Wrong !!</p>
+  }
+}
 
 
 
